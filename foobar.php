@@ -1,15 +1,16 @@
 <?php
-$output = '';
+$words = ['foo', 'bar'];
+$output = [];
 for ($i = 1; $i <= 100; $i++) { 
  if ($i%3 === 0 && $i%5 === 0) {
-  $output.= ' foobar';
+  $output[] = " $words[0]$words[1]";
  } else if ($i%3 === 0) {
-  $output.= ' foo';
+  $output[] = " $words[0]";
  } else if ($i%5 === 0) {
-  $output.= ' bar';
+  $output[] = " $words[1]";
  } else {
-  $output.= " $i";
+  $output[] = " $i";
  }
 }
-echo $output;
+echo implode(",", $output);
 ?>
